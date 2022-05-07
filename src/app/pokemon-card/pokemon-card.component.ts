@@ -1,5 +1,6 @@
 
 import { Component, Input, OnInit } from '@angular/core';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -10,6 +11,8 @@ export class PokemonCardComponent implements OnInit {
 
   @Input() pokemon?: string;
   @Input() numero: any;
+
+  listEspecie: any
 
   pegarImagemPokemon(){
     const numeroFormatado = this.leadingZero(this.numero);
@@ -27,9 +30,10 @@ export class PokemonCardComponent implements OnInit {
     return s;
   }
 
-  constructor() { }
+  constructor( private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    this.pokemonService.listEspecie().subscribe( dados => this.listEspecie = dados)
   }
 
 }
