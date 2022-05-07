@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { PokemonService } from '../services/pokemon.service';
 
@@ -7,13 +8,13 @@ import { PokemonService } from '../services/pokemon.service';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css']
 })
-export class PokemonListComponent implements OnInit {
-
+export class PokemonListComponent  {
+  
+  
 
   constructor(public pokemonService: PokemonService) { }
 
-  ngOnInit(): void {
-  }
+  
 
 
 }
